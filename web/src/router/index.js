@@ -11,6 +11,7 @@ import HomePage from '@/views/HomePage.vue'
 import BotPk from '@/views/pk/BotPk.vue'
 import UserPk from '@/views/pk/UserPk.vue'
 import TestPage from '@/views/testPage/testPage.vue'
+import SnakePk from '@/views/pk/snake/PkIndexView.vue'
 
 const routes = [
   {
@@ -22,6 +23,14 @@ const routes = [
   path: '/',
   name: 'home',
   component: HomePage,
+  meta: {
+    requestAuth: true,
+  }
+},
+{
+  path: '/pk/user/snake/',
+  name: 'pk_user_snake',
+  component: SnakePk,
   meta: {
     requestAuth: true,
   }

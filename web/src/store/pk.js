@@ -14,7 +14,14 @@ export default {
     step: 0,
     dice_num: 0,
     a_score: 0,
-    b_score: 0
+    b_score: 0,
+
+    gameObject: null,
+    gameMap: null,
+    a_sx: 0,
+    a_sy: 0,
+    b_sx: 0,
+    b_sy: 0
   },
   getters: {
   },
@@ -62,6 +69,18 @@ export default {
       state.loser = MyData.loser;
       state.a_score = MyData.a_score;
       state.b_score = MyData.b_score;
+    },
+    updateSnakeGame(state, game) {
+      state.gameMap = game.map;
+      state.a_id = game.a_id;
+      state.a_sx = game.a_sx;
+      state.a_sy = game.a_sy;
+      state.b_id = game.b_id;
+      state.b_sx = game.b_sx;
+      state.b_sy = game.b_sy;
+    },
+    updateGameObject(state, gameObject) {
+      state.gameObject = gameObject;
     }
   },
   //异步函数放这里

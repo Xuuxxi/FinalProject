@@ -65,7 +65,7 @@ export default {
                 store.state.pk.socket.send(JSON.stringify({
                     event: "start_matching",
                     bot_id: selected_bot.value,
-                    game_type: "1"
+                    game_type: "2"
                 }));
             }
             else {

@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="14009300-2148-4a45-b5f1-86877c62fbf0" name="变更" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/botrunningsystem/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/botrunningsystem/src/main/java/com/kob/botrunningsystem/BotrunningsystemApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/botrunningsystem/src/main/java/com/kob/botrunningsystem/config/RestTemplateConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/botrunningsystem/src/main/java/com/kob/botrunningsystem/config/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/botrunningsystem/src/main/java/com/kob/botrunningsystem/controller/BotController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/botrunningsystem/src/main/java/com/kob/botrunningsystem/service/BotService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/botrunningsystem/src/main/java/com/kob/botrunningsystem/service/impl/Bot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/botrunningsystem/src/main/java/com/kob/botrunningsystem/service/impl/BotPool.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/botrunningsystem/src/main/java/com/kob/botrunningsystem/service/impl/BotServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/botrunningsystem/src/main/java/com/kob/botrunningsystem/service/impl/Consumer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/botrunningsystem/src/main/java/com/kob/botrunningsystem/service/utils/Bot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/botrunningsystem/src/main/java/com/kob/botrunningsystem/service/utils/BotAi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/botrunningsystem/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/botrunningsystem/src/test/java/com/kob/botrunningsystem/botrunningsystem/BotrunningsystemApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/botrunningsystem/src/test/java/com/kob/botrunningsystem/botrunningsystem/testBot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/botrunningsystem/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/botrunningsystem/target/classes/com/kob/botrunningsystem/BotrunningsystemApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/botrunningsystem/target/classes/com/kob/botrunningsystem/config/RestTemplateConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/botrunningsystem/target/classes/com/kob/botrunningsystem/config/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/botrunningsystem/target/classes/com/kob/botrunningsystem/controller/BotController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/botrunningsystem/target/classes/com/kob/botrunningsystem/service/BotService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/botrunningsystem/target/classes/com/kob/botrunningsystem/service/impl/Bot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/botrunningsystem/target/classes/com/kob/botrunningsystem/service/impl/BotPool.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/botrunningsystem/target/classes/com/kob/botrunningsystem/service/impl/BotServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/botrunningsystem/target/classes/com/kob/botrunningsystem/service/impl/Consumer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/botrunningsystem/target/classes/com/kob/botrunningsystem/service/utils/Bot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/botrunningsystem/target/classes/com/kob/botrunningsystem/service/utils/BotAi.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/botrunningsystem/target/test-classes/com/kob/botrunningsystem/botrunningsystem/BotrunningsystemApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/botrunningsystem/target/test-classes/com/kob/botrunningsystem/botrunningsystem/testBot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/java/com/xuuxxi/mainbackend/MainBackendApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/java/com/xuuxxi/mainbackend/config/CorsConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/java/com/xuuxxi/mainbackend/config/MybatisConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/java/com/xuuxxi/mainbackend/config/RestTemplateConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/java/com/xuuxxi/mainbackend/config/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/java/com/xuuxxi/mainbackend/config/WebSocketConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/java/com/xuuxxi/mainbackend/consumer/WebSocketServer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/java/com/xuuxxi/mainbackend/consumer/utils/Game.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/java/com/xuuxxi/mainbackend/consumer/utils/JwtAuthentication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/java/com/xuuxxi/mainbackend/consumer/utils/Player.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/java/com/xuuxxi/mainbackend/controller/pk/BotMoveController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/java/com/xuuxxi/mainbackend/controller/pk/StartGameController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/java/com/xuuxxi/mainbackend/controller/rankList/rankListController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/java/com/xuuxxi/mainbackend/controller/user/account/InfoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/java/com/xuuxxi/mainbackend/controller/user/account/LoginController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/java/com/xuuxxi/mainbackend/controller/user/account/RegisterController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/java/com/xuuxxi/mainbackend/controller/user/account/UserPhotoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/java/com/xuuxxi/mainbackend/controller/user/bot/BotController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/java/com/xuuxxi/mainbackend/filter/JwtAuthenticationTokenFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/java/com/xuuxxi/mainbackend/mapper/BotMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/java/com/xuuxxi/mainbackend/mapper/UserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/java/com/xuuxxi/mainbackend/pojo/Bot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/java/com/xuuxxi/mainbackend/pojo/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/java/com/xuuxxi/mainbackend/service/impl/pk/ReceiveBotMoveServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/java/com/xuuxxi/mainbackend/service/impl/pk/StartGameServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/java/com/xuuxxi/mainbackend/service/impl/rankList/rankListServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/java/com/xuuxxi/mainbackend/service/impl/user/account/InfoServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/java/com/xuuxxi/mainbackend/service/impl/user/account/LoginServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/java/com/xuuxxi/mainbackend/service/impl/user/account/RegisterServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/java/com/xuuxxi/mainbackend/service/impl/user/bot/BotServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/java/com/xuuxxi/mainbackend/service/impl/user/securityUtil/UserDetailsImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/java/com/xuuxxi/mainbackend/service/impl/user/securityUtil/UserDetailsServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/java/com/xuuxxi/mainbackend/service/pk/ReceiveBotMoveService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/java/com/xuuxxi/mainbackend/service/pk/StartGameService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/java/com/xuuxxi/mainbackend/service/rankList/rankListService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/java/com/xuuxxi/mainbackend/service/user/account/InfoService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/java/com/xuuxxi/mainbackend/service/user/account/LoginService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/java/com/xuuxxi/mainbackend/service/user/account/RegisterService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/java/com/xuuxxi/mainbackend/service/user/bot/BotService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/java/com/xuuxxi/mainbackend/utils/JwtUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/test/java/com/xuuxxi/mainbackend/MainBackendApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/src/test/java/com/xuuxxi/mainbackend/UpdBotTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/com/xuuxxi/mainbackend/MainBackendApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/com/xuuxxi/mainbackend/config/CorsConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/com/xuuxxi/mainbackend/config/MybatisConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/com/xuuxxi/mainbackend/config/RestTemplateConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/com/xuuxxi/mainbackend/config/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/com/xuuxxi/mainbackend/config/WebSocketConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/com/xuuxxi/mainbackend/consumer/WebSocketServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/com/xuuxxi/mainbackend/consumer/utils/Game.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/com/xuuxxi/mainbackend/consumer/utils/JwtAuthentication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/com/xuuxxi/mainbackend/consumer/utils/Player.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/com/xuuxxi/mainbackend/controller/pk/BotMoveController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/com/xuuxxi/mainbackend/controller/pk/StartGameController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/com/xuuxxi/mainbackend/controller/rankList/rankListController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/com/xuuxxi/mainbackend/controller/user/account/InfoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/com/xuuxxi/mainbackend/controller/user/account/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/com/xuuxxi/mainbackend/controller/user/account/RegisterController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/com/xuuxxi/mainbackend/controller/user/account/UserPhotoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/com/xuuxxi/mainbackend/controller/user/bot/BotController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/com/xuuxxi/mainbackend/filter/JwtAuthenticationTokenFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/com/xuuxxi/mainbackend/mapper/BotMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/com/xuuxxi/mainbackend/mapper/UserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/com/xuuxxi/mainbackend/pojo/Bot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/com/xuuxxi/mainbackend/pojo/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/com/xuuxxi/mainbackend/service/impl/pk/ReceiveBotMoveServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/com/xuuxxi/mainbackend/service/impl/pk/StartGameServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/com/xuuxxi/mainbackend/service/impl/rankList/rankListServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/com/xuuxxi/mainbackend/service/impl/user/account/InfoServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/com/xuuxxi/mainbackend/service/impl/user/account/LoginServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/com/xuuxxi/mainbackend/service/impl/user/account/RegisterServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/com/xuuxxi/mainbackend/service/impl/user/bot/BotServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/com/xuuxxi/mainbackend/service/impl/user/securityUtil/UserDetailsImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/com/xuuxxi/mainbackend/service/impl/user/securityUtil/UserDetailsServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/com/xuuxxi/mainbackend/service/pk/ReceiveBotMoveService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/com/xuuxxi/mainbackend/service/pk/StartGameService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/com/xuuxxi/mainbackend/service/rankList/rankListService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/com/xuuxxi/mainbackend/service/user/account/InfoService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/com/xuuxxi/mainbackend/service/user/account/LoginService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/com/xuuxxi/mainbackend/service/user/account/RegisterService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/com/xuuxxi/mainbackend/service/user/bot/BotService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mainBackend/target/classes/com/xuuxxi/mainbackend/utils/JwtUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/matchingSystem/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/matchingSystem/src/main/java/com/example/matchsystem/MatchSystemApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/matchingSystem/src/main/java/com/example/matchsystem/config/RestTemplateConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/matchingSystem/src/main/java/com/example/matchsystem/config/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/matchingSystem/src/main/java/com/example/matchsystem/controller/MatchingController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/matchingSystem/src/main/java/com/example/matchsystem/service/MatchingService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/matchingSystem/src/main/java/com/example/matchsystem/service/impl/MatchingServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/matchingSystem/src/main/java/com/example/matchsystem/service/impl/utils/MatchingPool.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/matchingSystem/src/main/java/com/example/matchsystem/service/impl/utils/Player.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/matchingSystem/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/matchingSystem/src/test/java/com/example/matchsystem/MatchSystemApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/matchingSystem/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/matchingSystem/target/classes/com/example/matchsystem/MatchSystemApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/matchingSystem/target/classes/com/example/matchsystem/config/RestTemplateConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/matchingSystem/target/classes/com/example/matchsystem/config/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/matchingSystem/target/classes/com/example/matchsystem/controller/MatchingController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/matchingSystem/target/classes/com/example/matchsystem/service/MatchingService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/matchingSystem/target/classes/com/example/matchsystem/service/impl/MatchingServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/matchingSystem/target/classes/com/example/matchsystem/service/impl/utils/MatchingPool.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/matchingSystem/target/classes/com/example/matchsystem/service/impl/utils/Player.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/afi/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/botrunningsystem/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/botrunningsystem/src/main/java/com/kob/botrunningsystem/BotrunningsystemApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/botrunningsystem/src/main/java/com/kob/botrunningsystem/config/RestTemplateConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/botrunningsystem/src/main/java/com/kob/botrunningsystem/config/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/botrunningsystem/src/main/java/com/kob/botrunningsystem/controller/BotController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/botrunningsystem/src/main/java/com/kob/botrunningsystem/service/BotService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/botrunningsystem/src/main/java/com/kob/botrunningsystem/service/impl/Bot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/botrunningsystem/src/main/java/com/kob/botrunningsystem/service/impl/BotPool.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/botrunningsystem/src/main/java/com/kob/botrunningsystem/service/impl/BotServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/botrunningsystem/src/main/java/com/kob/botrunningsystem/service/impl/Consumer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/botrunningsystem/src/main/java/com/kob/botrunningsystem/service/utils/Bot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/botrunningsystem/src/main/java/com/kob/botrunningsystem/service/utils/BotAi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/botrunningsystem/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/botrunningsystem/src/test/java/com/kob/botrunningsystem/botrunningsystem/BotrunningsystemApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/botrunningsystem/src/test/java/com/kob/botrunningsystem/botrunningsystem/testBot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/botrunningsystem/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/botrunningsystem/target/classes/com/kob/botrunningsystem/BotrunningsystemApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/botrunningsystem/target/classes/com/kob/botrunningsystem/config/RestTemplateConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/botrunningsystem/target/classes/com/kob/botrunningsystem/config/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/botrunningsystem/target/classes/com/kob/botrunningsystem/controller/BotController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/botrunningsystem/target/classes/com/kob/botrunningsystem/service/BotService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/botrunningsystem/target/classes/com/kob/botrunningsystem/service/impl/Bot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/botrunningsystem/target/classes/com/kob/botrunningsystem/service/impl/BotPool.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/botrunningsystem/target/classes/com/kob/botrunningsystem/service/impl/BotServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/botrunningsystem/target/classes/com/kob/botrunningsystem/service/impl/Consumer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/botrunningsystem/target/classes/com/kob/botrunningsystem/service/utils/Bot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/botrunningsystem/target/classes/com/kob/botrunningsystem/service/utils/BotAi.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/botrunningsystem/target/test-classes/com/kob/botrunningsystem/botrunningsystem/BotrunningsystemApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/botrunningsystem/target/test-classes/com/kob/botrunningsystem/botrunningsystem/testBot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/java/com/xuuxxi/mainbackend/MainBackendApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/java/com/xuuxxi/mainbackend/config/CorsConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/java/com/xuuxxi/mainbackend/config/MybatisConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/java/com/xuuxxi/mainbackend/config/RestTemplateConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/java/com/xuuxxi/mainbackend/config/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/java/com/xuuxxi/mainbackend/config/WebSocketConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/java/com/xuuxxi/mainbackend/consumer/WebSocketServer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/java/com/xuuxxi/mainbackend/consumer/utils/Game.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/java/com/xuuxxi/mainbackend/consumer/utils/JwtAuthentication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/java/com/xuuxxi/mainbackend/consumer/utils/Player.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/java/com/xuuxxi/mainbackend/controller/pk/BotMoveController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/java/com/xuuxxi/mainbackend/controller/pk/StartGameController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/java/com/xuuxxi/mainbackend/controller/rankList/rankListController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/java/com/xuuxxi/mainbackend/controller/user/account/InfoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/java/com/xuuxxi/mainbackend/controller/user/account/LoginController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/java/com/xuuxxi/mainbackend/controller/user/account/RegisterController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/java/com/xuuxxi/mainbackend/controller/user/account/UserPhotoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/java/com/xuuxxi/mainbackend/controller/user/bot/BotController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/java/com/xuuxxi/mainbackend/filter/JwtAuthenticationTokenFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/java/com/xuuxxi/mainbackend/mapper/BotMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/java/com/xuuxxi/mainbackend/mapper/UserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/java/com/xuuxxi/mainbackend/pojo/Bot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/java/com/xuuxxi/mainbackend/pojo/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/java/com/xuuxxi/mainbackend/service/impl/pk/ReceiveBotMoveServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/java/com/xuuxxi/mainbackend/service/impl/pk/StartGameServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/java/com/xuuxxi/mainbackend/service/impl/rankList/rankListServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/java/com/xuuxxi/mainbackend/service/impl/user/account/InfoServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/java/com/xuuxxi/mainbackend/service/impl/user/account/LoginServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/java/com/xuuxxi/mainbackend/service/impl/user/account/RegisterServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/java/com/xuuxxi/mainbackend/service/impl/user/bot/BotServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/java/com/xuuxxi/mainbackend/service/impl/user/securityUtil/UserDetailsImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/java/com/xuuxxi/mainbackend/service/impl/user/securityUtil/UserDetailsServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/java/com/xuuxxi/mainbackend/service/pk/ReceiveBotMoveService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/java/com/xuuxxi/mainbackend/service/pk/StartGameService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/java/com/xuuxxi/mainbackend/service/rankList/rankListService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/java/com/xuuxxi/mainbackend/service/user/account/InfoService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/java/com/xuuxxi/mainbackend/service/user/account/LoginService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/java/com/xuuxxi/mainbackend/service/user/account/RegisterService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/java/com/xuuxxi/mainbackend/service/user/bot/BotService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/java/com/xuuxxi/mainbackend/utils/JwtUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/test/java/com/xuuxxi/mainbackend/MainBackendApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/src/test/java/com/xuuxxi/mainbackend/UpdBotTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/com/xuuxxi/mainbackend/MainBackendApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/com/xuuxxi/mainbackend/config/CorsConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/com/xuuxxi/mainbackend/config/MybatisConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/com/xuuxxi/mainbackend/config/RestTemplateConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/com/xuuxxi/mainbackend/config/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/com/xuuxxi/mainbackend/config/WebSocketConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/com/xuuxxi/mainbackend/consumer/WebSocketServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/com/xuuxxi/mainbackend/consumer/utils/Game.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/com/xuuxxi/mainbackend/consumer/utils/JwtAuthentication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/com/xuuxxi/mainbackend/consumer/utils/Player.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/com/xuuxxi/mainbackend/controller/pk/BotMoveController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/com/xuuxxi/mainbackend/controller/pk/StartGameController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/com/xuuxxi/mainbackend/controller/rankList/rankListController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/com/xuuxxi/mainbackend/controller/user/account/InfoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/com/xuuxxi/mainbackend/controller/user/account/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/com/xuuxxi/mainbackend/controller/user/account/RegisterController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/com/xuuxxi/mainbackend/controller/user/account/UserPhotoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/com/xuuxxi/mainbackend/controller/user/bot/BotController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/com/xuuxxi/mainbackend/filter/JwtAuthenticationTokenFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/com/xuuxxi/mainbackend/mapper/BotMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/com/xuuxxi/mainbackend/mapper/UserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/com/xuuxxi/mainbackend/pojo/Bot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/com/xuuxxi/mainbackend/pojo/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/com/xuuxxi/mainbackend/service/impl/pk/ReceiveBotMoveServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/com/xuuxxi/mainbackend/service/impl/pk/StartGameServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/com/xuuxxi/mainbackend/service/impl/rankList/rankListServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/com/xuuxxi/mainbackend/service/impl/user/account/InfoServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/com/xuuxxi/mainbackend/service/impl/user/account/LoginServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/com/xuuxxi/mainbackend/service/impl/user/account/RegisterServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/com/xuuxxi/mainbackend/service/impl/user/bot/BotServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/com/xuuxxi/mainbackend/service/impl/user/securityUtil/UserDetailsImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/com/xuuxxi/mainbackend/service/impl/user/securityUtil/UserDetailsServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/com/xuuxxi/mainbackend/service/pk/ReceiveBotMoveService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/com/xuuxxi/mainbackend/service/pk/StartGameService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/com/xuuxxi/mainbackend/service/rankList/rankListService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/com/xuuxxi/mainbackend/service/user/account/InfoService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/com/xuuxxi/mainbackend/service/user/account/LoginService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/com/xuuxxi/mainbackend/service/user/account/RegisterService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/com/xuuxxi/mainbackend/service/user/bot/BotService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBackend/target/classes/com/xuuxxi/mainbackend/utils/JwtUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matchingSystem/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matchingSystem/src/main/java/com/example/matchsystem/MatchSystemApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matchingSystem/src/main/java/com/example/matchsystem/config/RestTemplateConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matchingSystem/src/main/java/com/example/matchsystem/config/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matchingSystem/src/main/java/com/example/matchsystem/controller/MatchingController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matchingSystem/src/main/java/com/example/matchsystem/service/MatchingService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matchingSystem/src/main/java/com/example/matchsystem/service/impl/MatchingServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matchingSystem/src/main/java/com/example/matchsystem/service/impl/utils/MatchingPool.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matchingSystem/src/main/java/com/example/matchsystem/service/impl/utils/Player.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matchingSystem/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matchingSystem/src/test/java/com/example/matchsystem/MatchSystemApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matchingSystem/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matchingSystem/target/classes/com/example/matchsystem/MatchSystemApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matchingSystem/target/classes/com/example/matchsystem/config/RestTemplateConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matchingSystem/target/classes/com/example/matchsystem/config/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matchingSystem/target/classes/com/example/matchsystem/controller/MatchingController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matchingSystem/target/classes/com/example/matchsystem/service/MatchingService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matchingSystem/target/classes/com/example/matchsystem/service/impl/MatchingServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matchingSystem/target/classes/com/example/matchsystem/service/impl/utils/MatchingPool.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matchingSystem/target/classes/com/example/matchsystem/service/impl/utils/Player.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+        <option name="userSettingsFile" value="E:\FakeDesk\JavaBackend\JavaWeb\Maven\apache-maven-3.8.5-bin\apache-maven-3.8.5\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2fEHQMhZf20NBE0GxtwTT58Ymt6" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "E:/FakeDesk/FinalProject/backend",
+    "settings.editor.selected.configurable": "leetcode.id"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="14009300-2148-4a45-b5f1-86877c62fbf0" name="变更" comment="" />
+      <created>1713359300047</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1713359300047</updated>
+      <workItem from="1713359302377" duration="640000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
