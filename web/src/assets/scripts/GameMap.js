@@ -47,7 +47,7 @@ export class GameMap extends AcGameObject {
 
             if (d >= 0) {
                 this.store.state.pk.socket.send(JSON.stringify({
-                    event: "moveSnake",
+                    event: "snakeMove",
                     direction: d,
                 }));
             }

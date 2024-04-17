@@ -45,4 +45,12 @@ public class BotController {
 
         return botService.addBot(userId, botCode, ownBoard, otherBoard, figure);
     }
+
+    @PostMapping("/bot/add/snake/")
+    public String addBotSnake(@RequestParam MultiValueMap<String,String> data){
+        Integer userId = Integer.parseInt(Objects.requireNonNull(data.getFirst("user_id")));
+        String botCode = data.getFirst("bot_code");
+        String input = data.getFirst("input");
+        return botService.addBotSnake(userId, botCode, input);
+    }
 }

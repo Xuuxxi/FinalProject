@@ -3,7 +3,9 @@ package com.xuuxxi.mainbackend.consumer.utils.snake;
 
 import com.alibaba.fastjson.JSONObject;
 import com.xuuxxi.mainbackend.consumer.WebSocketServer;
+import com.xuuxxi.mainbackend.mapper.UserMapper;
 import com.xuuxxi.mainbackend.pojo.Bot;
+import com.xuuxxi.mainbackend.pojo.User;
 import org.springframework.util.LinkedMultiValueMap;
 
 import java.util.ArrayList;
@@ -49,7 +51,7 @@ public class SnakeGame extends Thread {
 
     private String loser = null;
 
-    private final static String addBotUrl = "http://127.0.0.1:3002/bot/add/";
+    private final static String addBotUrl = "http://127.0.0.1:3002/bot/add/snake/";
 
     public SnakeGame(Integer rows, Integer cols, Integer inner_walls_count, Integer id_a, Bot aBot, Integer id_b, Bot bBot) {
         this.rows = rows;
@@ -260,10 +262,39 @@ public class SnakeGame extends Thread {
         System.out.println(msg);
     }
 
+
+
+    private void RatingUpdate() {
+        //赢了 + 10分，输了 - 5分。
+        if (playerB.getId() == 114514) return;
+        UserMapper userMapper = WebSocketServer.userMapper;
+
+        if ("B".equals(loser)) {
+            User userA = userMapper.selectById(playerA.getId());
+            userA.setRating(userA.getRating() + 10);
+            userMapper.updateById(userA);
+
+            User userB = userMapper.selectById(playerB.getId());
+            userB.setRating(userB.getRating() - 5);
+            userMapper.updateById(userB);
+        }
+
+        if ("A".equals(loser)) {
+            User userA = userMapper.selectById(playerA.getId());
+            userA.setRating(userA.getRating() - 5);
+            userMapper.updateById(userA);
+
+            User userB = userMapper.selectById(playerB.getId());
+            userB.setRating(userB.getRating() + 10);
+            userMapper.updateById(userB);
+        }
+    }
+
     private void sendResult() {
         JSONObject resp = new JSONObject();
         resp.put("event", "result");
         resp.put("loser", loser);
+        RatingUpdate();
 
         sendAllMsg(resp.toJSONString());
     }

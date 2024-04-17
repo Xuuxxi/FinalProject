@@ -5,8 +5,10 @@
         <img :src="$store.state.user.photo" alt="" style="width: 100%; border-radius: 25%; margin-top: 40px;">
         <button type="button" data-bs-toggle="modal" data-bs-target="#changeUserPhoto"
           style="width: 100%; margin: 10px auto; background-color: rgba(50,50,50,0.35); font-weight: 450; border-radius: 10px; color: white">更换头像</button>
-        <button type="button" data-bs-toggle="modal" data-bs-target="#showExBot"
-          style="width: 100%; margin: 10px auto; background-color: rgba(50,50,50,0.35); font-weight: 450; border-radius: 10px; color: white">Bot示例</button>
+        <button type="button" data-bs-toggle="modal" data-bs-target="#showExBot1"
+          style="width: 100%; margin: 10px auto; background-color: rgba(50,50,50,0.35); font-weight: 450; border-radius: 10px; color: white">骰子Bot示例</button>
+        <button type="button" data-bs-toggle="modal" data-bs-target="#showExBot2"
+          style="width: 100%; margin: 10px auto; background-color: rgba(50,50,50,0.35); font-weight: 450; border-radius: 10px; color: white">蛇蛇Bot示例</button>
 
         <!--modal-->
         <div class="modal fade" id="changeUserPhoto" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -27,15 +29,30 @@
           </div>
         </div>
 
-        <div class="modal fade" id="showExBot" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="showExBot1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-xl">
             <div class="modal-content">
               <div class="modal-header">
-                <h6 class="modal-title" id="exampleModalLabel">Bot 示例</h6>
+                <h6 class="modal-title" id="exampleModalLabel">骰子 Bot 示例</h6>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <VAceEditor v-model:value="addBotRemind" @init="editorInit" lang="java" theme="textmate"
+                <VAceEditor v-model:value="addDiceBotRemind" @init="editorInit" lang="java" theme="textmate"
+                  style="height: 300px" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="showExBot2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h6 class="modal-title" id="exampleModalLabel">蛇蛇 Bot 示例</h6>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <VAceEditor v-model:value="addSnakeBotRemind" @init="editorInit" lang="java" theme="textmate"
                   style="height: 300px" />
               </div>
             </div>
@@ -167,20 +184,40 @@ export default {
 
 
 
-    const addBotRemind = ref(`package com.kob.botrunningsystem.service.utils;
-import java.util.List;
+      const addDiceBotRemind = ref(`package com.kob.botrunningsystem.service.utils;
+      import java.util.List;
 
-public class Bot implements com.kob.botrunningsystem.service.utils.BotAi {
-    @Override
-    public Integer nextStep(List<Integer> ownBoard, List<Integer> otherBoard, Integer figure) {
-        /*
-         请在此处编辑你的bot逻辑代码
+      public class Bot implements com.kob.botrunningsystem.service.utils.BotAi {
+          @Override
+          public Integer nextStep(List<Integer> ownBoard, List<Integer> otherBoard, Integer figure) {
+              /*
+              请在此处编辑你的bot逻辑代码
+              */
+              
+              //在此处返回下一步结果
+              return null;
+          }
+      }`
+    );
+
+    const addSnakeBotRemind = ref(`package com.kob.botrunningsystem.service.utils;
+        import java.util.ArrayList;
+        import java.util.List;
+
+        /**
+         * @Author: Xuuxxi
+         * @Date: 2024/4/17
          */
-        
-        //在此处返回下一步结果
-        return null;
-    }
-}`);
+        public class BotSnake implements com.kob.botrunningsystem.service.utils.BotSnakeAi{
+            @Override
+            public Integer nextMove(String input) {
+                // 在此编写你的逻辑代码
+                //格式：地图#我的横坐标#我的纵坐标#我的操作#对手的横坐标#对手的纵坐标#对手的操作
+
+                return 0;
+            }
+        }`
+    );
 
 
     const store = useStore();
@@ -304,7 +341,8 @@ public class Bot implements com.kob.botrunningsystem.service.utils.BotAi {
     return {
       userPhoto,
       bots,
-      addBotRemind,
+      addDiceBotRemind,
+      addSnakeBotRemind,
       getBotInfo,
       add_bot,
       addBot,

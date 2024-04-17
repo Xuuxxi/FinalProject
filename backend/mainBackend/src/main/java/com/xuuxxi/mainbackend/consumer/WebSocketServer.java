@@ -1,6 +1,5 @@
 package com.xuuxxi.mainbackend.consumer;
 
-
 import com.alibaba.fastjson.JSONObject;
 import com.xuuxxi.mainbackend.consumer.utils.Game;
 import com.xuuxxi.mainbackend.consumer.utils.JwtAuthentication;
@@ -39,6 +38,7 @@ public class WebSocketServer {
     public static BotMapper botMapper;
 
     public Game game = null;
+
     public SnakeGame snakeGame = null;
     private final static String addPlayerUrl = "http://127.0.0.1:3001/player/add/";
     private final static String removePlayerUrl = "http://127.0.0.1:3001/player/remove/";
@@ -166,12 +166,13 @@ public class WebSocketServer {
             users.get(b.getId()).sendMsg(respB.toJSONString());
     }
 
-    private void startMatching(String botId) {
+    private void startMatching(String botId, String gameType) {
         System.out.println("start matching!");
         MultiValueMap<String, String> data = new LinkedMultiValueMap<>();
         data.add("user_id", this.user.getId().toString());
         data.add("rating", this.user.getRating().toString());
         data.add("bot_id", botId);
+        data.add("game_type", gameType);
         restTemplate.postForObject(addPlayerUrl, data, String.class);
     }
 
@@ -194,9 +195,11 @@ public class WebSocketServer {
 
     private void snakeMove(int direction) {
         if (snakeGame.getPlayerA().getId().equals(user.getId())) {
+            System.out.println("a step here");
             if(snakeGame.getPlayerA().getBotId().equals(-1))
                 snakeGame.setNextStepA(direction);
         } else if (snakeGame.getPlayerB().getId().equals(user.getId())) {
+            System.out.println("b step here");
             if(snakeGame.getPlayerB().getBotId().equals(-1))
                 snakeGame.setNextStepB(direction);
         }
@@ -204,11 +207,10 @@ public class WebSocketServer {
 
     @OnMessage
     public void onMessage(String message, Session session) {  // 当做路由
-        System.out.println("receive message!");
         JSONObject data = JSONObject.parseObject(message);
         String event = data.getString("event");
         if ("start_matching".equals(event)) {
-            startMatching(data.getString("bot_id"));
+            startMatching(data.getString("bot_id"), data.getString("game_type"));
         } else if ("stop_matching".equals(event)) {
             stopMatching();
         } else if ("move".equals(event)) {

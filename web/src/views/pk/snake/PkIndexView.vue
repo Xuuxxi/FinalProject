@@ -27,7 +27,7 @@ export default {
       // 初始化
       store.commit("updateOpponent", {
         username: '待匹配',
-        photo: "https://cdn.acwing.com/media/article/image/2022/08/09/1_1db2488f17-anonymous.png",
+        photo: "https://img1.baidu.com/it/u=3373990605,1380325608&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1664470800&t=69ba588c27005cd51ffab1a02cb7d94c",
       })
 
       socket = new WebSocket(socketUrl);

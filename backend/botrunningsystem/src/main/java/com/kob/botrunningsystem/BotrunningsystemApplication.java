@@ -9,6 +9,7 @@ public class BotrunningsystemApplication {
 
     public static void main(String[] args) {
         BotServiceImpl.botPool.start();
+        BotServiceImpl.botSnakePool.start();
         SpringApplication.run(BotrunningsystemApplication.class, args);
     }
 
