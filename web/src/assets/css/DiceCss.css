@@ -1,0 +1,83 @@
+.dice {
+    background-image: url(https://pic1.imgdb.cn/item/6336786816f2c2beb143731d.png);
+    width: 100px;
+    height: 100px;
+    background-position: 0% 100%;
+    border-radius: 20%;
+    animation: .5s steps(6, jump-none) random infinite;
+}
+
+.dice1 {
+    background-image: url(https://pic1.imgdb.cn/item/63368a3216f2c2beb15612c9.png);
+    width: 100px;
+    height: 100px;
+    border-radius: 20%;
+}
+
+.dice2 {
+    background-image: url(https://pic1.imgdb.cn/item/63368a3216f2c2beb15612d0.png);
+    width: 100px;
+    height: 100px;
+    border-radius: 20%;
+}
+
+.dice3 {
+    background-image: url(https://pic1.imgdb.cn/item/63368a3216f2c2beb15612c3.png);
+    width: 100px;
+    height: 100px;
+    border-radius: 20%;
+}
+
+.dice4 {
+    background-image: url(https://pic1.imgdb.cn/item/63368a3516f2c2beb1561793.png);
+    width: 100px;
+    height: 100px;
+    border-radius: 20%;
+}
+
+.dice5 {
+    background-image: url(https://pic1.imgdb.cn/item/63368a3516f2c2beb15617a2.png);
+    width: 100px;
+    height: 100px;
+    border-radius: 20%;
+}
+
+.dice6 {
+    background-image: url(https://pic1.imgdb.cn/item/63368a3516f2c2beb15617b1.png);
+    width: 100px;
+    height: 100px;
+    border-radius: 20%;
+}
+
+@keyframes random {
+    to {
+        background-position: 100% 100%;
+    }
+}
+
+#dice {
+    display: none;
+}
+
+#dice:checked+label .dice {
+    animation-play-state: paused;
+}
+
+.dice::before {
+    content: '投掷';
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-family: Helvetica;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 20%;
+}
+
+#dice:checked+label .dice::before {
+    display: none;
+}
