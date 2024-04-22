@@ -31,7 +31,6 @@ public class ReceiveBotMoveServiceImpl implements ReceiveBotMoveService {
 
     @Override
     public String receiveSnakeBotMove(Integer userId, Integer direction) {
-        System.out.println("start move, usrId = " + userId);
         if (WebSocketServer.users.get(userId) != null) {
             SnakeGame game = WebSocketServer.users.get(userId).snakeGame;
             if (game != null) {
@@ -42,7 +41,7 @@ public class ReceiveBotMoveServiceImpl implements ReceiveBotMoveService {
                 }
             }
         }
-        System.out.println("move success");
+
         return "receive bot move success";
     }
 }

@@ -3,13 +3,13 @@
     <MatchGround v-if="$store.state.pk.status === 'matching'"></MatchGround>
     <ResultGround v-if="$store.state.pk.loser != 'none'"></ResultGround>
 </template>
-  
+
 <script>
-import PlayGround from '../../components/PlayGround.vue'
+import PlayGround from '@/components/oj/PlayGround.vue'
 import { onMounted, onUnmounted } from 'vue'
-import MatchGround from '@/components/MatchGround.vue';
+import MatchGround from '@/components/oj/MatchGround.vue';
 import { useStore } from 'vuex';
-import ResultGround from '@/components/ResultGround.vue';
+import ResultGround from '@/components/oj/ResultGround.vue';
 
 export default {
     components: {
@@ -23,9 +23,8 @@ export default {
 
         let socket = null;
 
-
         onMounted(() => {
-            store.commit("updateLoser", 'none'); 
+            // 初始化
             store.commit("updateOpponent", {
                 username: '待匹配',
                 photo: "https://pic.imgdb.cn/item/662676f20ea9cb14032427a1.jpg",
@@ -45,17 +44,14 @@ export default {
                         photo: data.opponent_photo
                     }),
 
-                        setTimeout(() => {
-                            store.commit("updateStatus", "playing")
-                        }, 1000);
+                    setTimeout(() => {
+                        store.commit("updateStatus", "playing")
+                    }, 200);
 
-                    store.commit("updateGame", data.game);
-
-                } else if (data.event === 'result' && store.state.pk.status === 'playing') store.commit("updateRes", data);
-                else if (data.event === 'roll') store.commit("updateRoll", data);
-                else if (data.event === 'curMap') store.commit("updateCurMap", data);
-
-                socket.onclose = () => {}
+                    // store.commit("updateSnakeGame", data.game);
+                } 
+                
+                socket.onclose = () => { }
             }
         })
 
@@ -67,7 +63,5 @@ export default {
     }
 }
 </script>
-  
-<style scoped>
 
-</style>
+<style scoped></style>

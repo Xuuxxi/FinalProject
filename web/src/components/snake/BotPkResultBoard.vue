@@ -5,15 +5,12 @@
         </div>
         <div class="result-board-text" v-else-if="$store.state.pk.loser === 'A' && $store.state.pk.a_id === parseInt($store.state.user.id)">
             你输了
-            <div class="rank_text">RANK分 -5</div>
         </div>
         <div class="result-board-text" v-else-if="$store.state.pk.loser === 'B' && $store.state.pk.b_id === parseInt($store.state.user.id)">
             你输了
-            <div class="rank_text">RANK分 -5</div>
         </div>
         <div class="result-board-text" v-else>
             你赢了！
-            <div class="rank_text">RANK分 +10!</div>
         </div>
         <div class="result-board-btn">
             <button @click="restart" type="button" class="btn btn-warning btn-lg">
@@ -34,8 +31,8 @@ export default {
             store.commit("updateStatus", "matching");
             store.commit("updateLoser", "none");
             store.commit("updateOpponent", {
-                username: "待匹配",
-                photo: "https://img1.baidu.com/it/u=3373990605,1380325608&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1664470800&t=69ba588c27005cd51ffab1a02cb7d94c",
+                username: "Crazy Snake!",
+                photo: "https://pic.imgdb.cn/item/662677a80ea9cb140325d0aa.jpg",
             })
         }
 

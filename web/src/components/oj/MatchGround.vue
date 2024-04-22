@@ -1,22 +1,13 @@
 <template>
     <div class="matchGround">
         <div class="row">
-            <div class="col-4">
+            <div class="col-6">
                 <div class="user_photo">
                     <img :src="$store.state.user.photo" alt="">
                     <div class="username">{{$store.state.user.username}}</div>
                 </div>
             </div>
-            <div class="col-4">
-                <div class="bot_select">
-                    <select v-model="selected_bot" class="form-select" aria-label="Default select example">
-                        <option value="-1" selected style="text-align:center;">自己玩啦</option>
-                        <option v-for="bot in bots" :key="bot.id" :value="bot.id" style="text-align:center">
-                            {{bot.title}}出战</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-4">
+            <div class="col-6">
                 <div class="user_photo">
                     <img :src="$store.state.pk.opponent_photo" alt="">
                     <div class="username">{{$store.state.pk.opponent_username}}</div>
@@ -34,37 +25,35 @@
 <script>
 import { useStore } from 'vuex'
 import { ref } from 'vue';
-import $ from 'jquery'
+// import $ from 'jquery'
 
 export default {
     setup() {
         const store = useStore();
         let match_but_info = ref("匹配!");
         let bots = ref([]);
-        let selected_bot = ref("-1");
-        const getBotInfo = () => {
-            $.ajax({
-                url: "http://localhost:3000/user/bot/getlist/",
-                type: "get",
-                headers: {
-                    Authorization: "Bearer " + store.state.user.token
-                },
-                success(resp) {
-                    bots.value = resp;
-                },
-                error(resp) {
-                    console.log(resp);
-                }
-            });
-        };
-        getBotInfo();
+        // const getBotInfo = () => {
+        //     $.ajax({
+        //         url: "http://localhost:3000/user/bot/getlist/",
+        //         type: "get",
+        //         headers: {
+        //             Authorization: "Bearer " + store.state.user.token
+        //         },
+        //         success(resp) {
+        //             bots.value = resp;
+        //         },
+        //         error(resp) {
+        //             console.log(resp);
+        //         }
+        //     });
+        // };
         const click_match_but = () => {
             if (match_but_info.value === "匹配!") {
                 match_but_info.value = "取消!";
                 store.state.pk.socket.send(JSON.stringify({
                     event: "start_matching",
-                    bot_id: selected_bot.value,
-                    game_type: "1"
+                    game_type: "3",
+                    bot_id: '-1'
                 }));
             }
             else {
@@ -77,9 +66,7 @@ export default {
         return {
             match_but_info,
             bots,
-            selected_bot,
-            click_match_but,
-            getBotInfo
+            click_match_but
         };
     }
 }

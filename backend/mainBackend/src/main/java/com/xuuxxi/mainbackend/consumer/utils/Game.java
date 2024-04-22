@@ -278,13 +278,13 @@ public class Game extends Thread {
     }
 
     private void RatingUpdate() {
-        //赢了 + 10分，输了 - 5分。
+        //赢了 + 5分，输了 - 5分。
         if (playerB.getId() == 114514) return;
         UserMapper userMapper = WebSocketServer.userMapper;
 
         if ("B".equals(loser)) {
             User userA = userMapper.selectById(playerA.getId());
-            userA.setRating(userA.getRating() + 10);
+            userA.setRating(userA.getRating() + 5);
             userMapper.updateById(userA);
 
             User userB = userMapper.selectById(playerB.getId());
@@ -298,7 +298,7 @@ public class Game extends Thread {
             userMapper.updateById(userA);
 
             User userB = userMapper.selectById(playerB.getId());
-            userB.setRating(userB.getRating() + 10);
+            userB.setRating(userB.getRating() + 5);
             userMapper.updateById(userB);
         }
     }

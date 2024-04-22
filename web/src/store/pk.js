@@ -78,6 +78,8 @@ export default {
       state.b_id = game.b_id;
       state.b_sx = game.b_sx;
       state.b_sy = game.b_sy;
+      state.a_rating = game.a_rating;
+      state.b_rating = game.b_rating;
     },
     updateGameObject(state, gameObject) {
       state.gameObject = gameObject;

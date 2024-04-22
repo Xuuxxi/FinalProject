@@ -45,13 +45,13 @@ export default {
 
         const startBotGame = () => {
             $.ajax({
-                url: 'http://127.0.0.1:3000/pk/start/game/',
+                url: 'http://127.0.0.1:3000/pk/start/game/snake/',
                 type: 'post',
                 data: {
                     a_id: store.state.user.id,
                     a_bot_id: selected_bot.value,
-                    b_id: '114514',
-                    b_bot_id: '114514'
+                    b_id: '114515',
+                    b_bot_id: '114515'
                 },
                 success() {
                     but_info.value = "来了!";

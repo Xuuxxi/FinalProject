@@ -128,6 +128,10 @@ public class WebSocketServer {
     }
 
     public static void startSnakeGame(Integer aId, Integer aBotId, Integer bId, Integer bBotId) {
+        if(bId == 114515){
+            users.put(bId, users.get(aId));
+        }
+
         User a = userMapper.selectById(aId), b = userMapper.selectById(bId);
         Bot aBot = botMapper.selectById(aBotId), bBot = botMapper.selectById(bBotId);
 
@@ -147,6 +151,8 @@ public class WebSocketServer {
         respGame.put("b_id", game.getPlayerB().getId());
         respGame.put("b_sx", game.getPlayerB().getSx());
         respGame.put("b_sy", game.getPlayerB().getSy());
+        respGame.put("a_rating", a.getRating());
+        respGame.put("b_rating", b.getRating());
         respGame.put("map", game.getG());
 
         JSONObject respA = new JSONObject();
@@ -162,8 +168,12 @@ public class WebSocketServer {
         respB.put("opponent_username", a.getUsername());
         respB.put("opponent_photo", a.getPhoto());
         respB.put("game", respGame);
-        if (users.get(b.getId()) != null)
+        if (users.get(b.getId()) != null && b.getId() != 114515)
             users.get(b.getId()).sendMsg(respB.toJSONString());
+    }
+
+    public static void startOjGame(Integer aId, Integer bId){
+
     }
 
     private void startMatching(String botId, String gameType) {
@@ -195,11 +205,9 @@ public class WebSocketServer {
 
     private void snakeMove(int direction) {
         if (snakeGame.getPlayerA().getId().equals(user.getId())) {
-            System.out.println("a step here");
             if(snakeGame.getPlayerA().getBotId().equals(-1))
                 snakeGame.setNextStepA(direction);
         } else if (snakeGame.getPlayerB().getId().equals(user.getId())) {
-            System.out.println("b step here");
             if(snakeGame.getPlayerB().getBotId().equals(-1))
                 snakeGame.setNextStepB(direction);
         }
@@ -223,6 +231,10 @@ public class WebSocketServer {
             game.stopBot(data.getString("user_id"));
         } else if ("snakeMove".equals(event)) {
             snakeMove(data.getInteger("direction"));
+        } else if ("startSnakeBot".equals(event)){
+            snakeGame.startBot(data.getString("user_id"));
+        } else if ("stopSnakeBot".equals(event)){
+            snakeGame.stopBot(data.getString("user_id"));
         }
     }
 

@@ -95,6 +95,33 @@ public class SnakeGame extends Thread {
         return false;
     }
 
+    //开启托管
+    public void startBot(String userId){
+        Integer curId = Integer.parseInt(userId);
+        System.out.println("userId = " + curId + " 开启托管");
+        if(playerA.getId().equals(curId)){
+            playerA.setBotId(114515);
+            playerA.setBotCode(WebSocketServer.botMapper.selectById(114515).getContent());
+            setBotCode(playerA);
+        }else if(playerB.getId().equals(curId)){
+            playerB.setBotId(114515);
+            playerB.setBotCode(WebSocketServer.botMapper.selectById(114515).getContent());
+            setBotCode(playerB);
+        }
+    }
+
+    public void stopBot(String userId){
+        Integer curId = Integer.parseInt(userId);
+        System.out.println("userId = " + curId + " 停止托管");
+        if(playerA.getId().equals(curId)){
+            playerA.setBotId(-1);
+            playerA.setBotCode("");
+        }else if(playerB.getId().equals(curId)){
+            playerB.setBotId(-1);
+            playerB.setBotCode("");
+        }
+    }
+
     private boolean draw() {  // 画地图
         for (int i = 0; i < this.rows; i++) {
             for (int j = 0; j < this.cols; j++) {
@@ -265,13 +292,13 @@ public class SnakeGame extends Thread {
 
 
     private void RatingUpdate() {
-        //赢了 + 10分，输了 - 5分。
-        if (playerB.getId() == 114514) return;
+        //赢了 + 5分，输了 - 5分。
+        if (playerB.getId() == 114515) return;
         UserMapper userMapper = WebSocketServer.userMapper;
 
         if ("B".equals(loser)) {
             User userA = userMapper.selectById(playerA.getId());
-            userA.setRating(userA.getRating() + 10);
+            userA.setRating(userA.getRating() + 5);
             userMapper.updateById(userA);
 
             User userB = userMapper.selectById(playerB.getId());
@@ -285,7 +312,7 @@ public class SnakeGame extends Thread {
             userMapper.updateById(userA);
 
             User userB = userMapper.selectById(playerB.getId());
-            userB.setRating(userB.getRating() + 10);
+            userB.setRating(userB.getRating() + 5);
             userMapper.updateById(userB);
         }
     }

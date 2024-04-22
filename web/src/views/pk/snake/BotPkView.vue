@@ -1,21 +1,21 @@
 <template>
   <PlayGround v-if="$store.state.pk.status === 'playing'" />
-  <MatchGround v-if="$store.state.pk.status === 'matching'"></MatchGround>
-  <ResultGround v-if="$store.state.pk.loser != 'none'"></ResultGround>
+  <BotMatchGround v-if="$store.state.pk.status === 'matching'"></BotMatchGround>
+  <BotResultGround v-if="$store.state.pk.loser != 'none'"></BotResultGround>
 </template>
 
 <script>
 import PlayGround from '@/components/snake/PlayGround.vue'
 import { onMounted, onUnmounted } from 'vue'
-import MatchGround from '@/components/snake/MatchGround.vue';
+import BotMatchGround from '@/components/snake/BotPkMatchBoard.vue';
 import { useStore } from 'vuex';
-import ResultGround from '@/components/snake/ResultGround.vue';
+import BotResultGround from '@/components/snake/BotPkResultBoard.vue';
 
 export default {
   components: {
     PlayGround,
-    MatchGround,
-    ResultGround
+    BotMatchGround,
+    BotResultGround
   },
   setup() {
     const store = useStore();
@@ -26,8 +26,8 @@ export default {
     onMounted(() => {
       // 初始化
       store.commit("updateOpponent", {
-        username: '待匹配',
-        photo: "https://pic.imgdb.cn/item/662676f20ea9cb14032427a1.jpg",
+        username: 'Crazy Snake!',
+        photo: "https://pic.imgdb.cn/item/662677a80ea9cb140325d0aa.jpg",
       })
 
       socket = new WebSocket(socketUrl);
@@ -44,9 +44,9 @@ export default {
             photo: data.opponent_photo
           }),
 
-            setTimeout(() => {
-              store.commit("updateStatus", "playing")
-            }, 200);
+          setTimeout(() => {
+            store.commit("updateStatus", "playing")
+          }, 200);
 
           store.commit("updateSnakeGame", data.game);
         } else if (data.event === 'move') {

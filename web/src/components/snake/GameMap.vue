@@ -16,25 +16,29 @@
           <div class="lInfo">
               <div v-if="role === 'A'">
                   <div class="username">{{ $store.state.user.username }}</div>
+                  <div class="rating">{{ $store.state.pk.a_rating }}</div>
               </div>
               <div v-else>
                   <div class="username">{{ $store.state.pk.opponent_username }}</div>
+                  <div class="rating">{{ $store.state.pk.a_rating }}</div>
               </div>
-              <div class="rating">{{ $store.state.pk.a_rating }}</div>
           </div>
       </div>
+
       <div ref="parent" class="gamemap col-8">
           <canvas ref="canvas" tabindex="0"></canvas>
       </div>
+
       <div class="col-1">
           <div class="rInfo">
               <div v-if="role === 'B'">
                   <div class="Rusername">{{ $store.state.user.username }}</div>
+                  <div class="Rrating">{{ $store.state.pk.b_rating }}</div>
               </div>
               <div v-else>
                   <div class="Rusername">{{ $store.state.pk.opponent_username }}</div>
+                  <div class="Rrating">{{ $store.state.pk.b_rating }}</div>
               </div>
-              <div class="Rrating">{{ $store.state.pk.b_rating }}</div>
           </div>
       </div>
       <div class="col-1">
@@ -63,8 +67,10 @@ export default {
       let parent = ref(null);
       let canvas = ref(null);
       let playByBot = ref(0);
+      const socket = store.state.pk.socket;
 
       let role = ref('');
+
       if (store.state.pk.a_id == store.state.user.id) role.value = "A";
       else role.value = "B";
 
@@ -75,11 +81,29 @@ export default {
           );
       });
 
+      const startBot = () => {
+      playByBot.value = 1;
+      socket.send(JSON.stringify({
+        event: "startSnakeBot",
+        user_id: store.state.user.id
+      }))
+    }
+
+    const stopBot = () => {
+      playByBot.value = 0;
+      socket.send(JSON.stringify({
+        event: "stopSnakeBot",
+        user_id: store.state.user.id
+      }))
+    }
+
       return {
           parent,
           canvas,
           playByBot,
-          role
+          role,
+          startBot,
+          stopBot
       }
   }
 }

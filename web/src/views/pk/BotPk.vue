@@ -33,7 +33,6 @@ export default {
       socket = new WebSocket(socketUrl);
 
       socket.onopen = () => {
-        console.log('connected!');
         store.commit("updateSocket", socket)
       }
 
@@ -52,15 +51,11 @@ export default {
 
           store.commit("updateGame", data.game);
 
-          console.log('match!')
-
         } else if (data.event === 'result' && store.state.pk.status === 'playing') store.commit("updateRes", data);
         else if (data.event === 'roll') store.commit("updateRoll", data);
         else if (data.event === 'curMap') store.commit("updateCurMap", data);
 
-        socket.onclose = () => {
-          console.log("disconnected!")
-        }
+        socket.onclose = () => {}
       }
     })
 

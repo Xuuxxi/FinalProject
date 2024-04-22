@@ -10,15 +10,11 @@ import LocalPk from '@/views/pk/LocalPk.vue'
 import HomePage from '@/views/HomePage.vue'
 import BotPk from '@/views/pk/BotPk.vue'
 import UserPk from '@/views/pk/UserPk.vue'
-import TestPage from '@/views/testPage/testPage.vue'
 import SnakePk from '@/views/pk/snake/PkIndexView.vue'
+import SnakeBotPk from '@/views/pk/snake/BotPkView.vue'
+import OjView from '@/views/ojPage/OjView.vue'
 
 const routes = [
-  {
-  path: '/test',
-  name: 'testPage',
-  component: TestPage
-},
 {
   path: '/',
   name: 'home',
@@ -31,6 +27,14 @@ const routes = [
   path: '/pk/user/snake/',
   name: 'pk_user_snake',
   component: SnakePk,
+  meta: {
+    requestAuth: true,
+  }
+},
+{
+  path: '/pk/bot/snake/',
+  name: 'pk_bot_snake',
+  component: SnakeBotPk,
   meta: {
     requestAuth: true,
   }
@@ -87,6 +91,14 @@ const routes = [
   path: '/user/bot/',
   name: 'user_bot_index',
   component: UserBotIndexView,
+  meta: {
+    requestAuth: true,
+  }
+},
+{
+  path: '/oj/',
+  name: 'oj',
+  component: OjView,
   meta: {
     requestAuth: true,
   }

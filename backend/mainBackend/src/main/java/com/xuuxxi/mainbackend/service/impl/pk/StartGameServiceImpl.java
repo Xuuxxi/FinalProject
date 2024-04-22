@@ -21,4 +21,10 @@ public class StartGameServiceImpl implements StartGameService {
         WebSocketServer.startSnakeGame(aId , aBotId, bId, bBotId);
         return "start game success";
     }
+
+    @Override
+    public String startOjGame(Integer aId, Integer bId) {
+        WebSocketServer.startOjGame(aId, bId);
+        return null;
+    }
 }

@@ -5,6 +5,10 @@
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
+            <router-link :class="route_name == 'oj' ? 'nav-link active' : 'nav-link'"
+              :to="{ name: 'oj' }">随机题目对决</router-link>
+          </li>
+          <li class="nav-item">
             <router-link :class="route_name == 'pk_user' ? 'nav-link active' : 'nav-link'"
               :to="{ name: 'pk_user' }">骰子匹配对战</router-link>
           </li>
@@ -17,8 +21,8 @@
               :to="{ name: 'pk_bot' }">骰子人机对战</router-link>
           </li>
           <li class="nav-item">
-            <router-link :class="route_name == 'pk_bot' ? 'nav-link active' : 'nav-link'"
-              :to="{ name: 'pk_bot' }">蛇蛇人机对战</router-link>
+            <router-link :class="route_name == 'pk_bot_snake' ? 'nav-link active' : 'nav-link'"
+              :to="{ name: 'pk_bot_snake' }">蛇蛇人机对战</router-link>
           </li>
           <li class="nav-item">
             <router-link :class="route_name == 'pk_local' ? 'nav-link active' : 'nav-link'"
