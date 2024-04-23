@@ -3,11 +3,15 @@ package com.xuuxxi.mainbackend.consumer;
 import com.alibaba.fastjson.JSONObject;
 import com.xuuxxi.mainbackend.consumer.utils.Game;
 import com.xuuxxi.mainbackend.consumer.utils.JwtAuthentication;
+import com.xuuxxi.mainbackend.consumer.utils.OjGame;
 import com.xuuxxi.mainbackend.consumer.utils.snake.SnakeGame;
 import com.xuuxxi.mainbackend.mapper.BotMapper;
+import com.xuuxxi.mainbackend.mapper.QuestionMapper;
 import com.xuuxxi.mainbackend.mapper.UserMapper;
 import com.xuuxxi.mainbackend.pojo.Bot;
 import com.xuuxxi.mainbackend.pojo.User;
+import com.xuuxxi.mainbackend.pojo.oj.OjQuestion;
+import com.xuuxxi.mainbackend.service.oj.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.LinkedMultiValueMap;
@@ -36,10 +40,12 @@ public class WebSocketServer {
 
     public static RestTemplate restTemplate;
     public static BotMapper botMapper;
+    public static QuestionService questionService;
 
     public Game game = null;
 
     public SnakeGame snakeGame = null;
+    public OjGame ojGame = null;
     private final static String addPlayerUrl = "http://127.0.0.1:3001/player/add/";
     private final static String removePlayerUrl = "http://127.0.0.1:3001/player/remove/";
 
@@ -56,6 +62,10 @@ public class WebSocketServer {
     @Autowired
     public void setBotMapper(BotMapper botMapper) {
         WebSocketServer.botMapper = botMapper;
+    }
+    @Autowired
+    public void setQuestionService(QuestionService questionService) {
+        WebSocketServer.questionService = questionService;
     }
 
     @OnOpen
@@ -172,8 +182,36 @@ public class WebSocketServer {
             users.get(b.getId()).sendMsg(respB.toJSONString());
     }
 
-    public static void startOjGame(Integer aId, Integer bId){
+    public static void startOjGame(Integer aId, Integer bId, Long questionId){
+        User a = userMapper.selectById(aId), b = userMapper.selectById(bId);
+        OjQuestion question = questionService.getRandomOne();
 
+        OjGame game = new OjGame(aId, bId, questionId);
+        if (users.get(a.getId()) != null)
+            users.get(a.getId()).ojGame = game;
+        if (users.get(b.getId()) != null)
+            users.get(b.getId()).ojGame = game;
+
+        JSONObject respGame = new JSONObject();
+        respGame.put("a_id", aId);
+        respGame.put("b_id", bId);
+        respGame.put("question", question);
+
+        JSONObject respA = new JSONObject();
+        respA.put("event", "match_success");
+        respA.put("opponent_username", b.getUsername());
+        respA.put("opponent_photo", b.getPhoto());
+        respA.put("game", respGame);
+        if (users.get(a.getId()) != null)
+            users.get(a.getId()).sendMsg(respA.toJSONString());
+
+        JSONObject respB = new JSONObject();
+        respB.put("event", "match_success");
+        respB.put("opponent_username", a.getUsername());
+        respB.put("opponent_photo", a.getPhoto());
+        respB.put("game", respGame);
+        if (users.get(b.getId()) != null)
+            users.get(b.getId()).sendMsg(respB.toJSONString());
     }
 
     private void startMatching(String botId, String gameType) {
@@ -235,6 +273,10 @@ public class WebSocketServer {
             snakeGame.startBot(data.getString("user_id"));
         } else if ("stopSnakeBot".equals(event)){
             snakeGame.stopBot(data.getString("user_id"));
+        } else if ("commitDebug".equals(event)){
+            ojGame.debugCode(data.getString("code"), data.getString("codeType"));
+        } else if ("commitSubmit".equals(event)){
+            ojGame.commitCode(data.getString("code"), data.getString("codeType"));
         }
     }
 

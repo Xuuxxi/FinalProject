@@ -37,6 +37,8 @@ export default {
             }
 
             socket.onmessage = msg => {
+                console.log(msg);
+
                 const data = JSON.parse(msg.data);
                 if (data.event === "match_success") {
                     store.commit("updateOpponent", {
@@ -44,13 +46,15 @@ export default {
                         photo: data.opponent_photo
                     }),
 
-                    setTimeout(() => {
-                        store.commit("updateStatus", "playing")
-                    }, 200);
+                        setTimeout(() => {
+                            store.commit("updateStatus", "playing")
+                        }, 200);
 
-                    // store.commit("updateSnakeGame", data.game);
-                } 
-                
+                    store.commit("updateOjGame", data.game);
+                } else if (data.event === 'result') {
+                    store.commit("updateLoser", data.loser);
+                }
+
                 socket.onclose = () => { }
             }
         })

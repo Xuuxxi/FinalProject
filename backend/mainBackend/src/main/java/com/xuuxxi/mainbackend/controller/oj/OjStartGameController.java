@@ -1,5 +1,7 @@
-package com.xuuxxi.mainbackend.controller.pk.oj;
+package com.xuuxxi.mainbackend.controller.oj;
 
+import com.xuuxxi.mainbackend.pojo.oj.OjQuestion;
+import com.xuuxxi.mainbackend.service.oj.QuestionService;
 import com.xuuxxi.mainbackend.service.pk.StartGameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.MultiValueMap;
@@ -17,12 +19,15 @@ import java.util.Objects;
 public class OjStartGameController {
     @Autowired
     private StartGameService startGameService;
+    @Autowired
+    private QuestionService questionService;
 
     @PostMapping("/pk/start/game/oj/")
     public String startGame(@RequestParam MultiValueMap<String, String> data) {
         Integer aId = Integer.parseInt(Objects.requireNonNull(data.getFirst("a_id")));
         Integer bId = Integer.parseInt(Objects.requireNonNull(data.getFirst("b_id")));
+        OjQuestion one = questionService.getRandomOne();
 
-        return startGameService.startOjGame(aId, bId);
+        return startGameService.startOjGame(aId, bId, one.getId());
     }
 }

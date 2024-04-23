@@ -13,7 +13,7 @@
         </div>
         <div class="result-board-text" v-else>
             你赢了！
-            <div class="rank_text">RANK分 +10!</div>
+            <div class="rank_text">RANK分 +5!</div>
         </div>
         <div class="result-board-btn">
             <button @click="restart" type="button" class="btn btn-warning btn-lg">

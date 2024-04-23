@@ -1,13 +1,179 @@
 <template>
-  <div>hi</div>
+  <ContentField>
+    <div class="title">
+      {{ questionName }}<span class="badge text-bg-success" style="font-size: 12px; margin-left: 8px;">{{
+        difficulty }}</span>
+    </div>
+    <br>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"></li>
+      <li class="list-group-item scdTitle">题目内容</li>
+      <li class="list-group-item" style="white-space:pre-wrap">
+        <div class="shadow-sm p-3 mb-1 bg-body-tertiary rounded text-bg-secondary" style="margin-top: 5px;">{{
+        description }}</div>
+      </li>
+      <li class="list-group-item scdTitle">输入格式</li>
+      <li class="list-group-item" style="white-space:pre-wrap">
+        <div class="shadow-sm p-3 mb-1 bg-body-tertiary rounded text-bg-secondary" style="margin-top: 5px;">{{
+        inputStyle }}</div>
+      </li>
+      <li class="list-group-item scdTitle">输出格式</li>
+      <li class="list-group-item" style="white-space:pre-wrap">
+        <div class="shadow-sm p-3 mb-1 bg-body-tertiary rounded text-bg-secondary" style="margin-top: 5px;">{{
+        outputStyle }}</div>
+      </li>
+      <li class="list-group-item scdTitle">输入样例</li>
+      <li class="list-group-item" style="white-space:pre-wrap">
+        <div class="shadow-sm p-3 mb-1 bg-body-tertiary rounded text-bg-secondary" style="margin-top: 5px;">{{
+        inputSample }}</div>
+      </li>
+      <li class="list-group-item scdTitle">输出样例</li>
+      <li class="list-group-item" style="white-space:pre-wrap">
+        <div class="shadow-sm p-3 mb-1 bg-body-tertiary rounded text-bg-secondary" style="margin-top: 5px;">{{
+        outputSample }}</div>
+      </li>
+    </ul>
+
+    <hr>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-9" style="font-size: 20px; font-weight: 1000;">
+            代码编写
+          </div>
+          <div class="col-3">
+            <select class="form-select" aria-label="Default select example" style="size: 3cap;" v-model="codeType">
+              <option value="0">选择编程语言</option>
+              <option value="1">java</option>
+              <option value="2">c++</option>
+              <option value="3">python</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <VAceEditor v-model:value="codeInfo.code" lang="c_cpp" theme="textmate" :options="{
+        useWorker: true,
+        showPrintMargin: false, // 去掉灰色的线，printMarginColumn
+        highlightActiveLine: true, // 高亮行
+        highlightSelectedWord: true, // 高亮选中的字符
+        tabSize: 4, // tab锁进字符
+        fontSize: 20, // 设置字号
+        wrap: false, // 是否换行
+      }" style="height: 800px; margin-top: 10px">
+        </VAceEditor>
+      </div>
+    </div>
+
+
+    <button id="submit_code_btn" class="btn btn-success"
+      style="float: right; border-radius: 20px; margin: 20px 0 0 20px;" @click="commitSubmit">
+      <span class="glyphicon glyphicon-cloud-upload" style="top: 1px;"></span>
+      &nbsp;
+      提交答案
+      &nbsp;
+    </button>
+    <button id="run_code_btn" class="btn btn-secondary" style="float: right; border-radius: 20px; margin: 20px 0 0 0;"
+      @click="commitDebug">
+      <span class="glyphicon glyphicon-play-circle" style="top: 2px;"></span>
+      &nbsp;
+      调试代码
+      &nbsp;
+    </button>
+  </ContentField>
 </template>
 
-<script>
-export default {
 
+<script>
+import ContentField from '@/components/ContentField.vue';
+import { useStore } from 'vuex';
+import { ref, reactive } from 'vue';
+import { VAceEditor } from 'vue3-ace-editor';
+import ace from 'ace-builds';
+
+export default {
+  components: {
+    ContentField,
+    VAceEditor
+  },
+  setup() {
+    ace.config.set(
+      "basePath",
+      "https://cdn.jsdelivr.net/npm/ace-builds@" + require('ace-builds').version + "/src-noconflict/")
+
+    const store = useStore();
+    const socket = store.state.pk.socket;
+    let description = ref(store.state.pk.description);
+    let difficulty = ref(store.state.pk.difficulty);
+    let inputSample = ref(store.state.pk.inputSample);
+    let inputStyle = ref(store.state.pk.inputStyle);
+    let outputSample = ref(store.state.pk.outputSample);
+    let outputStyle = ref(store.state.pk.outputStyle);
+    let questionName = ref(store.state.pk.questionName);
+    let codeType = ref("0");
+
+    const codeInfo = reactive({
+      code: ''
+    });
+
+    const commitSubmit = () => {
+      if (codeType.value == "0") alert("请选择编程语言");
+      else {
+        socket.send(JSON.stringify({
+          event: "commitSubmit",
+          code: codeInfo.code,
+          codeType: codeType
+        }));
+      }
+    }
+
+    const commitDebug = () => {
+      if (codeType.value == "0") alert("请选择编程语言");
+      else {
+        socket.send(JSON.stringify({
+          event: "commitDebug",
+          code: codeInfo.code,
+          codeType: codeType
+        }));
+      }
+    }
+
+    return {
+      ContentField,
+      description,
+      difficulty,
+      inputSample,
+      inputStyle,
+      outputSample,
+      outputStyle,
+      questionName,
+      codeInfo,
+      codeType,
+      commitSubmit,
+      commitDebug
+    }
+  }
 }
 </script>
 
-<style>
+<style scoped>
+li.scdTitle {
+  font-size: 20px;
+  font-weight: 800;
+}
 
+div.title {
+  font-size: 40px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.VAceEditor {
+  /* ace-editor默认没有高度，所以必须设置高度，或者同时设置最小行和最大行使编辑器的高度自动增高 */
+  height: 900px;
+  width: 10%;
+  font-size: 16px;
+  border: 1px solid;
+}
 </style>

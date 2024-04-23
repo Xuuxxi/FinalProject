@@ -23,8 +23,8 @@ public class StartGameServiceImpl implements StartGameService {
     }
 
     @Override
-    public String startOjGame(Integer aId, Integer bId) {
-        WebSocketServer.startOjGame(aId, bId);
-        return null;
+    public String startOjGame(Integer aId, Integer bId, Long questionId) {
+        WebSocketServer.startOjGame(aId, bId, questionId);
+        return "start game success";
     }
 }

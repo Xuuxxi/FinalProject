@@ -13,8 +13,17 @@ import UserPk from '@/views/pk/UserPk.vue'
 import SnakePk from '@/views/pk/snake/PkIndexView.vue'
 import SnakeBotPk from '@/views/pk/snake/BotPkView.vue'
 import OjView from '@/views/ojPage/OjView.vue'
+import TestPage from '@/views/testPage/testPage.vue'
 
 const routes = [
+  {
+    path: '/test',
+    name: 'test',
+    component: TestPage,
+    meta: {
+      requestAuth: true,
+    }
+  },
 {
   path: '/',
   name: 'home',

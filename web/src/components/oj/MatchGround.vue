@@ -32,21 +32,6 @@ export default {
         const store = useStore();
         let match_but_info = ref("匹配!");
         let bots = ref([]);
-        // const getBotInfo = () => {
-        //     $.ajax({
-        //         url: "http://localhost:3000/user/bot/getlist/",
-        //         type: "get",
-        //         headers: {
-        //             Authorization: "Bearer " + store.state.user.token
-        //         },
-        //         success(resp) {
-        //             bots.value = resp;
-        //         },
-        //         error(resp) {
-        //             console.log(resp);
-        //         }
-        //     });
-        // };
         const click_match_but = () => {
             if (match_but_info.value === "匹配!") {
                 match_but_info.value = "取消!";
