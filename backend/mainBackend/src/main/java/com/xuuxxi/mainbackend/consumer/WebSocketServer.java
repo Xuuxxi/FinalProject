@@ -5,6 +5,7 @@ import com.xuuxxi.mainbackend.consumer.utils.Game;
 import com.xuuxxi.mainbackend.consumer.utils.JwtAuthentication;
 import com.xuuxxi.mainbackend.consumer.utils.OjGame;
 import com.xuuxxi.mainbackend.consumer.utils.snake.SnakeGame;
+import com.xuuxxi.mainbackend.controller.oj.utils.TestPack;
 import com.xuuxxi.mainbackend.mapper.BotMapper;
 import com.xuuxxi.mainbackend.mapper.QuestionMapper;
 import com.xuuxxi.mainbackend.mapper.UserMapper;
@@ -22,6 +23,7 @@ import javax.websocket.*;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
+import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Component
@@ -48,7 +50,7 @@ public class WebSocketServer {
     public OjGame ojGame = null;
     private final static String addPlayerUrl = "http://127.0.0.1:3001/player/add/";
     private final static String removePlayerUrl = "http://127.0.0.1:3001/player/remove/";
-
+    private final static String getCodeResUrl = "http://127.0.0.1:3000/judge/";
     @Autowired
     public void setUserMapper(UserMapper userMapper) {
         WebSocketServer.userMapper = userMapper;
@@ -184,7 +186,7 @@ public class WebSocketServer {
 
     public static void startOjGame(Integer aId, Integer bId, Long questionId){
         User a = userMapper.selectById(aId), b = userMapper.selectById(bId);
-        OjQuestion question = questionService.getRandomOne();
+        OjQuestion question = questionService.getById(questionId);
 
         OjGame game = new OjGame(aId, bId, questionId);
         if (users.get(a.getId()) != null)
@@ -195,6 +197,7 @@ public class WebSocketServer {
         JSONObject respGame = new JSONObject();
         respGame.put("a_id", aId);
         respGame.put("b_id", bId);
+        respGame.put("qid", questionId.toString());
         respGame.put("question", question);
 
         JSONObject respA = new JSONObject();
@@ -251,10 +254,37 @@ public class WebSocketServer {
         }
     }
 
+    private void codeCommit(JSONObject data){
+        TestPack testPack = new TestPack();
+        testPack.setCode(Objects.requireNonNull(data.getString("code")));
+        testPack.setUid(Objects.requireNonNull(data.getString("uid")));
+        testPack.setQid(Long.parseLong(Objects.requireNonNull(data.getString("qid"))));
+        testPack.setUserName(Objects.requireNonNull(data.getString("userName")));
+        testPack.setQuestionName(Objects.requireNonNull(data.getString("questionName")));
+        testPack.setLanguage(Integer.parseInt(Objects.requireNonNull(data.getString("language"))));
+
+//        MultiValueMap<String, String> data = new LinkedMultiValueMap<>();
+//        data.add("user_id", this.user.getId().toString());
+//        data.add("rating", this.user.getRating().toString());
+//        data.add("bot_id", botId);
+//        data.add("game_type", gameType);
+//        restTemplate.postForObject(addPlayerUrl, data, String.class);
+
+        MultiValueMap<String, String> myData = new LinkedMultiValueMap<>();
+        myData.add("code", data.getString("code"));
+        myData.add("uid", data.getString("uid"));
+        myData.add("qid", data.getString("qid"));
+        myData.add("userName", data.getString("userName"));
+        myData.add("questionName", data.getString("questionName"));
+        myData.add("language", data.getString("language"));
+        restTemplate.postForObject(getCodeResUrl, myData, String.class);
+    }
+
     @OnMessage
     public void onMessage(String message, Session session) {  // 当做路由
         JSONObject data = JSONObject.parseObject(message);
         String event = data.getString("event");
+
         if ("start_matching".equals(event)) {
             startMatching(data.getString("bot_id"), data.getString("game_type"));
         } else if ("stop_matching".equals(event)) {
@@ -273,10 +303,8 @@ public class WebSocketServer {
             snakeGame.startBot(data.getString("user_id"));
         } else if ("stopSnakeBot".equals(event)){
             snakeGame.stopBot(data.getString("user_id"));
-        } else if ("commitDebug".equals(event)){
-            ojGame.debugCode(data.getString("code"), data.getString("codeType"));
         } else if ("commitSubmit".equals(event)){
-            ojGame.commitCode(data.getString("code"), data.getString("codeType"));
+            codeCommit(data);
         }
     }
 

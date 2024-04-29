@@ -45,8 +45,8 @@
           <div class="col-3">
             <select class="form-select" aria-label="Default select example" style="size: 3cap;" v-model="codeType">
               <option value="0">选择编程语言</option>
-              <option value="1">java</option>
-              <option value="2">c++</option>
+              <option value="1">c++</option>
+              <option value="2">java</option>
               <option value="3">python</option>
             </select>
           </div>
@@ -61,26 +61,40 @@
         tabSize: 4, // tab锁进字符
         fontSize: 20, // 设置字号
         wrap: false, // 是否换行
-      }" style="height: 800px; margin-top: 10px">
+      }" style="height: 700px; margin-top: 10px">
         </VAceEditor>
       </div>
     </div>
 
+    <div class="row">
+      <div class="col-12">
+        <button v-if="butShow" id="submit_code_btn" class="btn btn-success mb-2"
+          style="float: right; border-radius: 20px; margin: 20px 0 0 20px;" @click="commitSubmit">
+          <span class="glyphicon glyphicon-cloud-upload" style="top: 1px;"></span>
+          &nbsp;
+          提交答案
+          &nbsp;
+        </button>
 
-    <button id="submit_code_btn" class="btn btn-success"
-      style="float: right; border-radius: 20px; margin: 20px 0 0 20px;" @click="commitSubmit">
-      <span class="glyphicon glyphicon-cloud-upload" style="top: 1px;"></span>
-      &nbsp;
-      提交答案
-      &nbsp;
-    </button>
-    <button id="run_code_btn" class="btn btn-secondary" style="float: right; border-radius: 20px; margin: 20px 0 0 0;"
-      @click="commitDebug">
-      <span class="glyphicon glyphicon-play-circle" style="top: 2px;"></span>
-      &nbsp;
-      调试代码
-      &nbsp;
-    </button>
+        <button v-if="!butShow" class="btn btn-primary mb-2" type="button" disabled
+          style="float: right; border-radius: 20px; margin: 20px 0 0 20px;">
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          代码运行
+        </button>
+      </div>
+
+      <div v-if="title.length != 0" class="col-12">
+        <hr class="mb-3">
+        <div class="card" style="">
+          <div class="card-header" style="font-size: 25px; font-weight: 800;">
+            {{ title }}
+          </div>
+          <div class="card-body">
+            {{ message }}
+          </div>
+        </div>
+      </div>
+    </div>
   </ContentField>
 </template>
 
@@ -91,6 +105,7 @@ import { useStore } from 'vuex';
 import { ref, reactive } from 'vue';
 import { VAceEditor } from 'vue3-ace-editor';
 import ace from 'ace-builds';
+import { onMounted } from 'vue'
 
 export default {
   components: {
@@ -113,6 +128,10 @@ export default {
     let questionName = ref(store.state.pk.questionName);
     let codeType = ref("0");
 
+    const butShow = ref(true);
+    let title = ref("");
+    let message = ref("");
+
     const codeInfo = reactive({
       code: ''
     });
@@ -120,24 +139,32 @@ export default {
     const commitSubmit = () => {
       if (codeType.value == "0") alert("请选择编程语言");
       else {
+        butShow.value = false;
         socket.send(JSON.stringify({
           event: "commitSubmit",
           code: codeInfo.code,
-          codeType: codeType
+          uid: store.state.user.id,
+          qid: store.state.pk.qid,
+          userName: store.state.user.username,
+          questionName: questionName.value,
+          language: codeType.value
         }));
       }
     }
 
-    const commitDebug = () => {
-      if (codeType.value == "0") alert("请选择编程语言");
-      else {
-        socket.send(JSON.stringify({
-          event: "commitDebug",
-          code: codeInfo.code,
-          codeType: codeType
-        }));
+    onMounted(() => {
+      socket.onmessage = msg => {
+        const data = JSON.parse(msg.data);
+        if (data.event === 'commitResp') {
+          butShow.value = true;
+          title.value = data.title;
+          message.value = data.message
+          console.log(data.message);
+        } else if (data.event === 'result') {
+          store.commit("updateLoser", data.loser);
+        }
       }
-    }
+    })
 
     return {
       ContentField,
@@ -150,8 +177,10 @@ export default {
       questionName,
       codeInfo,
       codeType,
-      commitSubmit,
-      commitDebug
+      message,
+      title,
+      butShow,
+      commitSubmit
     }
   }
 }

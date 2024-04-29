@@ -37,7 +37,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <VAceEditor v-model:value="addDiceBotRemind" @init="editorInit" lang="java" theme="textmate"
+                <VAceEditor v-model:value="addDiceBotRemind" lang="java" theme="textmate"
                   style="height: 300px" />
               </div>
             </div>
@@ -52,7 +52,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <VAceEditor v-model:value="addSnakeBotRemind" @init="editorInit" lang="java" theme="textmate"
+                <VAceEditor v-model:value="addSnakeBotRemind" lang="java" theme="textmate"
                   style="height: 300px" />
               </div>
             </div>
@@ -106,7 +106,7 @@
                             </div>
                             <div class="mb-3">
                               <label for="botContent" class="form-label">代码</label>
-                              <VAceEditor v-model:value="bot.content" @init="editorInit" lang="java" theme="textmate"
+                              <VAceEditor v-model:value="bot.content" lang="java" theme="textmate"
                                 style="height: 300px" />
                             </div>
                           </div>
@@ -150,7 +150,7 @@
           </div>
           <div class="mb-3">
             <label for="add-bot-code" class="form-label">代码</label>
-            <VAceEditor v-model:value="add_bot.content" @init="editorInit" lang="java" theme="textmate"
+            <VAceEditor v-model:value="add_bot.content" lang="java" theme="textmate"
               style="height: 300px"></VAceEditor>
           </div>
         </div>

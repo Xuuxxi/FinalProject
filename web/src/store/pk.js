@@ -29,7 +29,8 @@ export default {
     inputStyle: "",
     outputSample: "",
     outputStyle: "",
-    questionName: ""
+    questionName: "",
+    qid: ""
   },
   getters: {
   },
@@ -93,6 +94,7 @@ export default {
       state.gameObject = gameObject;
     },
     updateOjGame(state, game) {
+      state.qid = game.qid;
       state.a_id = game.a_id;
       state.b_id = game.b_id;
       state.description = game.question.description.replace(/\\n/g, '\n');

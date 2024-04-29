@@ -22,6 +22,7 @@ public class MatchingPool extends Thread {
     private final static String startGameUrl = "http://127.0.0.1:3000/pk/start/game/";
     private final static String startSnakeGameUrl = "http://127.0.0.1:3000/pk/start/game/snake/";
     private final static String startOjGameUrl = "http://127.0.0.1:3000/pk/start/game/oj/";
+    private final static String startOjEasyGameUrl = "http://127.0.0.1:3000/pk/start/game/oj/easy/";
 
     @Autowired
     public void setRestTemplate(RestTemplate restTemplate) {
@@ -92,6 +93,14 @@ public class MatchingPool extends Thread {
         restTemplate.postForObject(startOjGameUrl, res, String.class);
     }
 
+    private void sendResultEasyOj(Player a, Player b){
+        LinkedMultiValueMap<String, String> res = new LinkedMultiValueMap<>();
+        res.add("a_id", a.getUserId().toString());
+        res.add("b_id", b.getUserId().toString());
+
+        restTemplate.postForObject(startOjEasyGameUrl, res, String.class);
+    }
+
     private void matchAll() {
         System.out.println("match info " + players.toString());
         boolean[] used = new boolean[players.size()];
@@ -105,7 +114,8 @@ public class MatchingPool extends Thread {
                     used[i] = used[j] = true;
                     if(a.getGameType() == 1) sendResult(a, b);
                     else if(a.getGameType() == 2) sendResultSnake(a, b);
-                    else sendResultOj(a, b);
+                    else if(a.getGameType() == 3) sendResultOj(a, b);
+                    else sendResultEasyOj(a, b);
                     break;
                 }
             }

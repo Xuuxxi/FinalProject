@@ -16,7 +16,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="afi" options="-parameters" />
+      <module name="afi" options="" />
       <module name="botrunningsystem" options="-parameters" />
       <module name="mainBackend" options="-parameters" />
       <module name="matchSystem" options="-parameters" />

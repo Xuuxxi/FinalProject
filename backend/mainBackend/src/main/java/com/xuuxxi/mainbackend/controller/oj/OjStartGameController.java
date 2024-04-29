@@ -30,4 +30,13 @@ public class OjStartGameController {
 
         return startGameService.startOjGame(aId, bId, one.getId());
     }
+
+    @PostMapping("/pk/start/game/oj/easy/")
+    public String startGameEasy(@RequestParam MultiValueMap<String, String> data) {
+        Integer aId = Integer.parseInt(Objects.requireNonNull(data.getFirst("a_id")));
+        Integer bId = Integer.parseInt(Objects.requireNonNull(data.getFirst("b_id")));
+        OjQuestion one = questionService.getById("440640587125886976");
+
+        return startGameService.startOjGame(aId, bId, one.getId());
+    }
 }

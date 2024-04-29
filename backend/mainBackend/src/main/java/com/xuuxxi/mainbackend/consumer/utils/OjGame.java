@@ -2,17 +2,23 @@ package com.xuuxxi.mainbackend.consumer.utils;
 
 import com.alibaba.fastjson.JSONObject;
 import com.xuuxxi.mainbackend.consumer.WebSocketServer;
+import com.xuuxxi.mainbackend.controller.oj.utils.JudgeUtils;
+import com.xuuxxi.mainbackend.controller.oj.utils.TestPack;
+import com.xuuxxi.mainbackend.controller.oj.utils.TestResult;
 import com.xuuxxi.mainbackend.mapper.UserMapper;
 import com.xuuxxi.mainbackend.pojo.User;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @Author: Xuuxxi
  * @Date: 2024/4/24
  */
-public class OjGame {
+public class OjGame extends Thread {
     private String loser = null;
     private Integer aId, bId;
-
+//    private ReentrantLock lock = new ReentrantLock();
     private Long questionId;
 
     public OjGame(Integer a, Integer b, Long questionId) {
@@ -21,16 +27,22 @@ public class OjGame {
         this.questionId = questionId;
     }
 
-    public void debugCode(String code, String codeType) {
-        String msg = "its ok";
-        sendAllMsg(msg);
-    }
+    public void getCodeRes(TestResult testResult) {
+        if(testResult.isPass()){
+            if(Integer.parseInt(testResult.getUid()) == this.aId){
+                loser="B";
+                sendResult();
+            }else {
+                loser = "A";
+                sendResult();
+            }
+        }
 
-    public void commitCode(String code, String codeType) {
-        loser = "A";
-        sendResult();
-
-        sendAllMsg("yey");
+        JSONObject resp = new JSONObject();
+        resp.put("event", "commitResp");
+        resp.put("message", testResult.getMessage());
+        resp.put("title", testResult.getTitle());
+        sendAllMsg(resp.toJSONString());
     }
 
     private void sendAllMsg(String msg) {
