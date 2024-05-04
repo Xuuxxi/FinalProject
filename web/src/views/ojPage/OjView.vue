@@ -1,7 +1,10 @@
 <template>
     <PlayGround v-if="$store.state.pk.status === 'playing'" />
     <MatchGround v-if="$store.state.pk.status === 'matching'"></MatchGround>
-    <ResultGround v-if="$store.state.pk.loser != 'none'"></ResultGround>
+    <div class="ResGround">
+        <ResultGround v-if="$store.state.pk.loser != 'none'"></ResultGround>
+        <!-- <ResultGround></ResultGround> -->
+    </div>
 </template>
 
 <script>
@@ -44,10 +47,10 @@ export default {
                         photo: data.opponent_photo
                     }),
 
-                    setTimeout(() => {
-                        store.commit("updateStatus", "playing")
-                    }, 200);
-                    
+                        setTimeout(() => {
+                            store.commit("updateStatus", "playing")
+                        }, 200);
+
                     store.commit("updateOjGame", data.game);
                 }
                 // else if(data.event === 'commitResp') {
@@ -68,4 +71,11 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.ResGround {
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+</style>

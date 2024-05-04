@@ -52,9 +52,9 @@ div.result-board {
     width: 20vw;
     background-color: rgba(50, 50, 50, 0.5);
     border-radius: 20px;
-    position: absolute;
+    /* position: absolute;
     top: 28vh;
-    left: 40.5vw;
+    left: 40.5vw; */
 }
 
 div.result-board-text {

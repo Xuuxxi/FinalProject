@@ -72,7 +72,7 @@
           style="float: right; border-radius: 20px; margin: 20px 0 0 20px;" @click="commitSubmit">
           <span class="glyphicon glyphicon-cloud-upload" style="top: 1px;"></span>
           &nbsp;
-          提交答案
+          提交代码
           &nbsp;
         </button>
 
@@ -129,8 +129,8 @@ export default {
     let codeType = ref("0");
 
     const butShow = ref(true);
-    let title = ref("");
-    let message = ref("");
+    let title = ref("运行结果");
+    let message = ref("暂无运行结果");
 
     const codeInfo = reactive({
       code: ''
