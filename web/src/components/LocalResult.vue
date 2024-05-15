@@ -47,7 +47,7 @@ div.result-board {
     height: 30vh;
     width: 30vw;
     border-radius: 20px;
-    background-color: rgba(50, 50, 50, 0.5);
+    background-color: rgba(50, 50, 50, 0.55);
     position: absolute;
     top: 30vh;
     left: 35vw;

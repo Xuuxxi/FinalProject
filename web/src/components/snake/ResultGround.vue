@@ -50,7 +50,7 @@ export default {
 div.result-board {
     height: 25vh;
     width: 20vw;
-    background-color: rgba(50, 50, 50, 0.5);
+    background-color: rgba(50, 50, 50, 0.55);
     border-radius: 20px;
     position: absolute;
     top: 28vh;

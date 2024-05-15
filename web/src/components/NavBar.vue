@@ -18,11 +18,11 @@
           </li>
           <li class="nav-item">
             <router-link :class="route_name == 'pk_bot' ? 'nav-link active' : 'nav-link'"
-              :to="{ name: 'pk_bot' }">骰子人机对战</router-link>
+              :to="{ name: 'pk_bot' }">挑战骰子王</router-link>
           </li>
           <li class="nav-item">
             <router-link :class="route_name == 'pk_bot_snake' ? 'nav-link active' : 'nav-link'"
-              :to="{ name: 'pk_bot_snake' }">蛇蛇人机对战</router-link>
+              :to="{ name: 'pk_bot_snake' }">挑战蛇蛇王</router-link>
           </li>
           <li class="nav-item">
             <router-link :class="route_name == 'pk_local' ? 'nav-link active' : 'nav-link'"
@@ -44,11 +44,7 @@
               <li>
                 <hr class="dropdown-divider">
               </li>
-              <li><a class="dropdown-item" href="#" @click="toRule">游戏规则</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#" @click="logout">退出</a></li>
+              <li><a class="dropdown-item" href="#" @click="logout">登出</a></li>
             </ul>
           </li>
         </ul>

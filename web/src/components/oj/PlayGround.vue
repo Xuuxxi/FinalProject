@@ -86,7 +86,7 @@
       <div v-if="title.length != 0" class="col-12">
         <hr class="mb-3">
         <div class="card" style="">
-          <div class="card-header" style="font-size: 25px; font-weight: 800;">
+          <div class="card-header" style="font-size: 25px; font-weight: 800; font-size:30px;">
             {{ title }}
           </div>
           <div class="card-body">
@@ -189,12 +189,12 @@ export default {
 <style scoped>
 li.scdTitle {
   font-size: 20px;
-  font-weight: 800;
+  font-weight: 800; font-size:30px;
 }
 
 div.title {
   font-size: 40px;
-  font-weight: 800;
+  font-weight: 800; font-size:30px;
   text-align: center;
 }
 

@@ -1,38 +1,79 @@
 <template>
-    <div class="matchGround">
-        <div class="row">
-            <div class="col-6">
-                <div class="user_photo">
-                    <img :src="$store.state.user.photo" alt="">
-                    <div class="username">{{$store.state.user.username}}</div>
+    <div class="row">
+        <div class="col-2">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                style="width: 75%; margin: 40px 55px; background-color: rgba(50,50,50,0.6); font-weight: 800; font-size:30px; border-radius: 10px; color: white">
+                匹配规则
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content" style="margin-top: 20vh">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">匹配规则</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-6">
-                <div class="user_photo">
-                    <img :src="$store.state.pk.opponent_photo" alt="">
-                    <div class="username">{{$store.state.pk.opponent_username}}</div>
+        </div>
+
+        <div class="col-8">
+            <div class="matchGround">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="user_photo">
+                            <img :src="$store.state.user.photo" alt="">
+                            <div class="username">{{ $store.state.user.username }}</div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="user_photo">
+                            <img :src="$store.state.pk.opponent_photo" alt="">
+                            <div class="username">{{ $store.state.pk.opponent_username }}</div>
+                        </div>
+                    </div>
+                    <div class="col-12" style="text-align: center;padding-top: 8vh">
+                        <button type="button" class="btn btn-warning btn-lg" @click="click_match_but">
+                            <div class="info_text" style="font-size: 24px; font-weight:600">{{ match_but_info }}</div>
+                        </button>
+                    </div>
                 </div>
             </div>
-            <div class="col-12" style="text-align: center;padding-top: 8vh">
-                <button type="button" class="btn btn-warning btn-lg" @click="click_match_but">
-                    <div class="info_text" style="font-size: 24px; font-weight:600">{{match_but_info}}</div>
-                </button>
+        </div>
+
+        <div class="col-2">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                style="width: 75%; margin: 40px 15px; background-color: rgba(50,50,50,0.6); font-weight: 800; font-size:30px; border-radius: 10px; color: white">
+                游戏规则
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content" style="margin-top: 20vh">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">匹配规则</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <!-- <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="toast-header">
-            <strong class="mr-auto">Bootstrap</strong>
-            <small>11 mins ago</small>
-            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="toast-body">
-            Hello, world! This is a toast message.
-        </div>
-    </div> -->
 </template>
+
 
 <script>
 import { useStore } from 'vuex'
@@ -75,7 +116,7 @@ export default {
 <style scoped>
 div.matchGround {
     border-radius: 2%;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.4);
     width: 60vw;
     height: 70vh;
     margin: 40px auto;

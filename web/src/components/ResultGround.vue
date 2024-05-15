@@ -5,12 +5,12 @@
         </div>
         <div class="result-board-text"
             v-if="($store.state.pk.loser == 'A' && $store.state.pk.a_id == $store.state.user.id) || ($store.state.pk.loser == 'B' && $store.state.pk.b_id == $store.state.user.id)">
-            你输了
+            你输了!
             <div class="rank_text">RANK分 -5</div>
         </div>
         <div class="result-board-text" v-else>
-            你赢了
-            <div class="rank_text">RANK分 +10!</div>
+            你赢了！
+            <div class="rank_text">RANK分 +5</div>
         </div>
         <div v-if="$store.state.pk.a_score === 0 && $store.state.pk.b_score === 0">
             <div class="score_text">
@@ -62,7 +62,7 @@ export default {
 div.result-board {
     height: 35vh;
     width: 30vw;
-    background-color: rgba(50, 50, 50, 0.5);
+    background-color: rgba(50, 50, 50, 0.55);
     border-radius: 20px;
     position: absolute;
     top: 30vh;
