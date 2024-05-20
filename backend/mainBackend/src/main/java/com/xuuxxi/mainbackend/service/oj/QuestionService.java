@@ -8,5 +8,5 @@ import com.xuuxxi.mainbackend.pojo.oj.OjQuestion;
  * @Date: 2024/4/23
  */
 public interface QuestionService extends IService<OjQuestion> {
-    OjQuestion getRandomOne();
+    OjQuestion getRandomOne(String dif);
 }

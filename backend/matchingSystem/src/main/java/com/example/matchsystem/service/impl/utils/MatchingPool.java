@@ -89,6 +89,7 @@ public class MatchingPool extends Thread {
         LinkedMultiValueMap<String, String> res = new LinkedMultiValueMap<>();
         res.add("a_id", a.getUserId().toString());
         res.add("b_id", b.getUserId().toString());
+        res.add("rating", String.valueOf(Math.min(a.getRating(), b.getRating())));
 
         restTemplate.postForObject(startOjGameUrl, res, String.class);
     }

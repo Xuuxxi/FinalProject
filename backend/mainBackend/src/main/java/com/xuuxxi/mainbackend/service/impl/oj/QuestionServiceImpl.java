@@ -17,8 +17,9 @@ import org.springframework.stereotype.Service;
 public class QuestionServiceImpl extends ServiceImpl<QuestionMapper, OjQuestion> implements QuestionService {
     @Autowired QuestionMapper questionMapper;
     @Override
-    public OjQuestion getRandomOne() {
+    public OjQuestion getRandomOne(String dif) {
         QueryWrapper<OjQuestion> queryWrapper = Wrappers.query();
+        queryWrapper.eq("difficulty", dif);
         queryWrapper.orderByDesc("RAND()").last("LIMIT 1");
         return questionMapper.selectOne(queryWrapper);
     }

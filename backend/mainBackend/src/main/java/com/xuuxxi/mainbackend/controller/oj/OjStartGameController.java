@@ -26,7 +26,13 @@ public class OjStartGameController {
     public String startGame(@RequestParam MultiValueMap<String, String> data) {
         Integer aId = Integer.parseInt(Objects.requireNonNull(data.getFirst("a_id")));
         Integer bId = Integer.parseInt(Objects.requireNonNull(data.getFirst("b_id")));
-        OjQuestion one = questionService.getRandomOne();
+        int rating = Integer.parseInt(Objects.requireNonNull(data.getFirst("rating")));
+        String dif;
+        if(rating <= 1700) dif = "简单";
+        else if(rating <= 2000) dif = "中等";
+        else if(rating <= 2200) dif = "困难";
+        else dif = "噩梦";
+        OjQuestion one = questionService.getRandomOne(dif);
 
         return startGameService.startOjGame(aId, bId, one.getId());
     }

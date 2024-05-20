@@ -92,8 +92,8 @@ export default {
                 match_but_info.value = "取消!";
                 store.state.pk.socket.send(JSON.stringify({
                     event: "start_matching",
-                    // game_type: "3",
-                    game_type: "4", //easy --- HELLO WORLD
+                    game_type: "3",
+                    // game_type: "4", //easy --- HELLO WORLD
                     bot_id: '-1'
                 }));
             }

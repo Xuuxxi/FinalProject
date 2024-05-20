@@ -18,6 +18,7 @@ public class QuestionController {
 
     @GetMapping("/getQuestion/")
     public OjQuestion getQuestion(){
-        return questionService.getRandomOne();
+        return null;
+//        return questionService.getRandomOne();
     }
 }
